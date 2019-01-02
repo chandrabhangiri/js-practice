@@ -2,8 +2,10 @@ let express1 = require('express');
 let app1 = express1();
 let request = require('request');
 
+// first express routing
 app1.get('/distance/:lat1/:lang1/:lat2/:lang2', function(req, res) {
-    options = {
+    
+  options = {
         protocol: "https:",
         host: "maps.googleapis.com",
         pathname: '/maps/api/distancematrix/json',
@@ -14,6 +16,7 @@ app1.get('/distance/:lat1/:lang1/:lat2/:lang2', function(req, res) {
           key:""
         }
       };
+      
     this.options.query['origins']=req.params.lat1+","+req.params.lang1;
     this.options.query['destinations']=req.params.lat2+","+req.params.lang1;
 
